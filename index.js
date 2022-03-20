@@ -6,7 +6,7 @@ const server = express(); // server CAN'T LISTEN TO REQUESTS
 
 server.use(cors());
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 server.get("/inflation", (req, res) => {
   const { targetValue, startYear } = req.query;
